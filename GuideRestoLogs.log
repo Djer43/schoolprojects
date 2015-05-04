@@ -1,0 +1,45 @@
+mai 03, 2015 1:11:36 PM ch.hearc.ig.guideresto.log.MyLogger log
+Grave: null
+Local Exception Stack: 
+Exception [EclipseLink-30005] (Eclipse Persistence Services - 2.3.2.v20111125-r10461): org.eclipse.persistence.exceptions.PersistenceUnitLoadingException
+Exception Description: An exception was thrown while searching for persistence archives with ClassLoader: sun.misc.Launcher$AppClassLoader@24820846
+Internal Exception: javax.persistence.PersistenceException: Exception [EclipseLink-28018] (Eclipse Persistence Services - 2.3.2.v20111125-r10461): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Predeployment of PersistenceUnit [guideRestoDAOPU] failed.
+Internal Exception: Exception [EclipseLink-7250] (Eclipse Persistence Services - 2.3.2.v20111125-r10461): org.eclipse.persistence.exceptions.ValidationException
+Exception Description: [class ch.hearc.ig.guideresto.business.Grade] uses a non-entity [class ch.hearc.ig.guideresto.business.EvaluationCriteria] as target entity in the relationship attribute [field criteria].
+	at org.eclipse.persistence.exceptions.PersistenceUnitLoadingException.exceptionSearchingForPersistenceResources(PersistenceUnitLoadingException.java:127)
+	at org.eclipse.persistence.jpa.PersistenceProvider.createEntityManagerFactory(PersistenceProvider.java:115)
+	at javax.persistence.Persistence.createEntityManagerFactory(Unknown Source)
+	at javax.persistence.Persistence.createEntityManagerFactory(Unknown Source)
+	at ch.hearc.ig.guideresto.persistence.entitymanager.MyEntityManager.initEntityManager(MyEntityManager.java:30)
+	at ch.hearc.ig.guideresto.presentation.Application.addNewRestaurant(Application.java:294)
+	at ch.hearc.ig.guideresto.presentation.Application.proceedMainMenu(Application.java:92)
+	at ch.hearc.ig.guideresto.presentation.Application.main(Application.java:51)
+Caused by: javax.persistence.PersistenceException: Exception [EclipseLink-28018] (Eclipse Persistence Services - 2.3.2.v20111125-r10461): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Predeployment of PersistenceUnit [guideRestoDAOPU] failed.
+Internal Exception: Exception [EclipseLink-7250] (Eclipse Persistence Services - 2.3.2.v20111125-r10461): org.eclipse.persistence.exceptions.ValidationException
+Exception Description: [class ch.hearc.ig.guideresto.business.Grade] uses a non-entity [class ch.hearc.ig.guideresto.business.EvaluationCriteria] as target entity in the relationship attribute [field criteria].
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.predeploy(EntityManagerSetupImpl.java:1402)
+	at org.eclipse.persistence.internal.jpa.deployment.JPAInitializer.callPredeploy(JPAInitializer.java:98)
+	at org.eclipse.persistence.jpa.PersistenceProvider.createEntityManagerFactory(PersistenceProvider.java:105)
+	... 6 more
+Caused by: Exception [EclipseLink-28018] (Eclipse Persistence Services - 2.3.2.v20111125-r10461): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Predeployment of PersistenceUnit [guideRestoDAOPU] failed.
+Internal Exception: Exception [EclipseLink-7250] (Eclipse Persistence Services - 2.3.2.v20111125-r10461): org.eclipse.persistence.exceptions.ValidationException
+Exception Description: [class ch.hearc.ig.guideresto.business.Grade] uses a non-entity [class ch.hearc.ig.guideresto.business.EvaluationCriteria] as target entity in the relationship attribute [field criteria].
+	at org.eclipse.persistence.exceptions.EntityManagerSetupException.predeployFailed(EntityManagerSetupException.java:221)
+	... 9 more
+Caused by: Exception [EclipseLink-7250] (Eclipse Persistence Services - 2.3.2.v20111125-r10461): org.eclipse.persistence.exceptions.ValidationException
+Exception Description: [class ch.hearc.ig.guideresto.business.Grade] uses a non-entity [class ch.hearc.ig.guideresto.business.EvaluationCriteria] as target entity in the relationship attribute [field criteria].
+	at org.eclipse.persistence.exceptions.ValidationException.nonEntityTargetInRelationship(ValidationException.java:1355)
+	at org.eclipse.persistence.internal.jpa.metadata.accessors.mappings.RelationshipAccessor.getReferenceDescriptor(RelationshipAccessor.java:508)
+	at org.eclipse.persistence.internal.jpa.metadata.accessors.mappings.ObjectAccessor.processOneToOneForeignKeyRelationship(ObjectAccessor.java:622)
+	at org.eclipse.persistence.internal.jpa.metadata.accessors.mappings.ObjectAccessor.processOwningMappingKeys(ObjectAccessor.java:681)
+	at org.eclipse.persistence.internal.jpa.metadata.accessors.mappings.ManyToOneAccessor.process(ManyToOneAccessor.java:119)
+	at org.eclipse.persistence.internal.jpa.metadata.MetadataProject.processOwningRelationshipAccessors(MetadataProject.java:1450)
+	at org.eclipse.persistence.internal.jpa.metadata.MetadataProject.processStage3(MetadataProject.java:1685)
+	at org.eclipse.persistence.internal.jpa.metadata.MetadataProcessor.processORMMetadata(MetadataProcessor.java:535)
+	at org.eclipse.persistence.internal.jpa.deployment.PersistenceUnitProcessor.processORMetadata(PersistenceUnitProcessor.java:526)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.predeploy(EntityManagerSetupImpl.java:1337)
+	... 8 more
+

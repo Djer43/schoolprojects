@@ -1,0 +1,22 @@
+oct. 26, 2014 8:27:40 PM ch.hearc.ig.guideresto.log.MyLogger log
+Grave: null
+ch.hearc.ig.guideresto.exceptions.ConnectionProblemException: A problem appeared while loading a restaurant's evaluations
+	at ch.hearc.ig.guideresto.persistence.dao.postgresql.BasicEvaluationDAOImplPostgre.loadEvaluations(BasicEvaluationDAOImplPostgre.java:86)
+	at ch.hearc.ig.guideresto.services.RestaurantService.loadEvaluations(RestaurantService.java:199)
+	at ch.hearc.ig.guideresto.presentation.Application.showRestaurant(Application.java:307)
+	at ch.hearc.ig.guideresto.presentation.Application.showRestaurantsList(Application.java:140)
+	at ch.hearc.ig.guideresto.presentation.Application.proceedMainMenu(Application.java:77)
+	at ch.hearc.ig.guideresto.presentation.Application.main(Application.java:48)
+Caused by: org.postgresql.util.PSQLException: ERREUR: l'opérateur n'existe pas : bigint ~~ integer
+  Indice : Aucun opérateur ne correspond au nom donné et aux types d'arguments.
+Vous devez ajouter des conversions explicites de type.
+  Position : 85
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2198)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1927)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:561)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:419)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeQuery(AbstractJdbc2Statement.java:304)
+	at ch.hearc.ig.guideresto.persistence.dao.postgresql.BasicEvaluationDAOImplPostgre.loadEvaluations(BasicEvaluationDAOImplPostgre.java:79)
+	... 5 more
+

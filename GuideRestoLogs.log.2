@@ -1,0 +1,27 @@
+oct. 24, 2014 6:28:06 PM ch.hearc.ig.guideresto.log.MyLogger log
+Grave: null
+ch.hearc.ig.guideresto.exceptions.ConnectionProblemException: A problem appeared while loading a city with ID 1
+	at ch.hearc.ig.guideresto.persistence.dao.oracle.CityDAOImplOracle.researchById(CityDAOImplOracle.java:43)
+	at ch.hearc.ig.guideresto.persistence.dao.oracle.RestaurantDAOImplOracle.getRestaurant(RestaurantDAOImplOracle.java:264)
+	at ch.hearc.ig.guideresto.persistence.dao.oracle.RestaurantDAOImplOracle.researchAll(RestaurantDAOImplOracle.java:43)
+	at ch.hearc.ig.guideresto.services.RestaurantService.findAllRestaurants(RestaurantService.java:25)
+	at ch.hearc.ig.guideresto.presentation.Application.showRestaurantsList(Application.java:132)
+	at ch.hearc.ig.guideresto.presentation.Application.proceedMainMenu(Application.java:76)
+	at ch.hearc.ig.guideresto.presentation.Application.main(Application.java:47)
+Caused by: java.sql.SQLException: ORA-03115: type de réseau ou représentation non pris en compte
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:440)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:837)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:445)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:191)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:523)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:207)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:863)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1153)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1275)
+	at oracle.jdbc.driver.OracleStatement.executeQuery(OracleStatement.java:1477)
+	at oracle.jdbc.driver.OracleStatementWrapper.executeQuery(OracleStatementWrapper.java:392)
+	at ch.hearc.ig.guideresto.persistence.dao.oracle.CityDAOImplOracle.researchById(CityDAOImplOracle.java:32)
+	... 6 more
+
